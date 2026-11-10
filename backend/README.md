@@ -32,8 +32,125 @@ It handles RFID tag management, laundry bag tracking, batch organization, proces
 
 ## Project Structure
 
-TODO
-
+Note: Some project folders have not been implemented yet; Not completely fixed, can be subject to changes in the future
+```
+laundry_backend/
+│
+├── pyproject.toml
+├── alembic.ini
+├── README.md
+│
+├── migrations/
+│   ├── env.py
+│   └── versions/
+│
+├── src/
+│   └── app/
+│       │
+│       ├── main.py
+│       │
+│       ├── core/
+│       │   ├── config.py
+│       │   ├── logging.py
+│       │   ├── exceptions.py
+│       │   └── lifespan.py
+│       │
+│       ├── auth/
+│       │   ├── __init__.py
+│       │   ├── models.py
+│       │   ├── schemas.py
+│       │   ├── service.py
+│       │   ├── repository.py
+│       │   ├── dependencies.py
+│       │   ├── password.py
+│       │   ├── tokens.py
+│       │   └── router.py
+│       │
+│       ├── api/
+│       │   ├── __init__.py
+│       │   ├── router.py
+│       │   ├── dependencies.py
+│       │   ├── exception_handlers.py
+│       │   ├── schemas/
+│       │   │   ├── pagination.py
+│       │   │   └── responses.py
+│       │   │
+│       │   └── v1/
+│       │       ├── __init__.py
+│       │       ├── router.py
+│       │       │
+│       │       └── modules/
+│       │           ├── customers/
+│       │           │   ├── router.py
+│       │           │   ├── endpoints.py
+│       │           │   └── schemas.py
+│       │           │
+│       │           ├── catalog/
+│       │           │   ├── router.py
+│       │           │   ├── endpoints.py
+│       │           │   └── schemas.py
+│       │           │
+│       │           ├── orders/
+│       │           │   ├── router.py
+│       │           │   ├── endpoints.py
+│       │           │   └── schemas.py
+│       │           │
+│       │           ├── processing/
+│       │           │   ├── router.py
+│       │           │   ├── endpoints.py
+│       │           │   └── schemas.py
+│       │           │
+│       │           ├── billing/
+│       │           │   ├── router.py
+│       │           │   ├── endpoints.py
+│       │           │   └── schemas.py
+│       │           │
+│       │           └── delivery/
+│       │               ├── router.py
+│       │               ├── endpoints.py
+│       │               └── schemas.py
+│       │
+│       ├── devices/
+│       │   ├── __init__.py
+│       │   ├── router.py
+│       │   ├── authentication.py
+│       │   ├── dependencies.py
+│       │   ├── schemas.py
+│       │   ├── protocol.py
+│       │   ├── endpoints/
+│       │   │   ├── events.py
+│       │   │   ├── commands.py
+│       │   │   └── status.py
+│       │   └── services.py
+│       │
+│       ├── features/
+│       │   ├── customers/
+│       │   ├── catalog/
+│       │   ├── orders/
+│       │   ├── processing/
+│       │   ├── billing/
+│       │   └── delivery/
+│       │
+│       ├── infrastructure/
+│       │   ├── database/
+│       │   │   ├── base.py
+│       │   │   ├── session.py
+│       │   │   └── model_registry.py
+│       │   │
+│       │   ├── messaging/
+│       │   ├── notifications/
+│       │   └── external_services/
+│       │
+│       └── shared/
+│           ├── types.py
+│           ├── enums.py
+│           └── utilities.py
+│
+└── tests/
+    ├── unit/
+    ├── integration/
+    └── api/
+```
 ## Getting Started
 
 ### 1. Clone the Repository
